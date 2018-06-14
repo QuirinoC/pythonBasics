@@ -1,13 +1,8 @@
-words = ['juan','renato', 'perro', 'washington', 'python', 'jose', 'azul']
+words = ['Not_a_flamethrower_by_elon_musk','renato', 'perro', 'washington', 'python', 'jose', 'azul', 'spaguetti', 'raviolli', 'Super_Smash_Bros_Ultimate']
 k = 3
-concats = []
-for i in range(len(words) - 3):
-    concats.append("".join(words[i:i+3]))
-
-print(concats)
 max = 0
-for i, string in enumerate(concats):
-    if len(string) > len(concats[max]):
+for i in range(len(words) - k + 1):
+    if len(''.join(words[i:i+k])) > len(''.join(words[max:max+k])):
         max = i
-    
-print(concats[max])
+
+print(words[max:max+k])
